@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+    stages {
+        stage('Check Git') {
+            steps {
+                git 'https://github.com/Kirthi92/eficens.git'
+            }
+        stage('Build Maven') {
+            steps {
+                sh 'mvn clean package'
+            }
+        }    
+        
+    }
+}
